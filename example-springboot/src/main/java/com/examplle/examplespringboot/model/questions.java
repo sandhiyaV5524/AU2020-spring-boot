@@ -10,14 +10,14 @@ public class Questions {
 	public String op2;
 	public String op3;
 	public String op4;
-	private List<String> options;
+	
 	public int answer;
 	
 	public Questions() {
 		
 	}
 
-	public Questions(int qn_id, String qn, String op1, String op2, String op3, String op4, List<String> options,
+	public Questions(int qn_id, String qn, String op1, String op2, String op3, String op4, 
 			int answer) {
 		super();
 		this.qn_id = qn_id;
@@ -26,7 +26,7 @@ public class Questions {
 		this.op2 = op2;
 		this.op3 = op3;
 		this.op4 = op4;
-		this.options = options;
+	
 		this.answer = answer;
 	}
 
@@ -78,13 +78,7 @@ public class Questions {
 		this.op4 = op4;
 	}
 
-	public List<String> getOptions() {
-		return options;
-	}
-
-	public void setOptions(List<String> options) {
-		this.options = options;
-	}
+	
 
 	public int getAnswer() {
 		return answer;

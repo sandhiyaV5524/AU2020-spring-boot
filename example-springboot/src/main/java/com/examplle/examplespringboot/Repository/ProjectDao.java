@@ -157,8 +157,8 @@ public class ProjectDao {
 	        String query = "delete from project where pid=?;";
 	        return jdbcTemplate.update(query,pid);
 	    }
-		 
-	
+
+
 	
 	
 	

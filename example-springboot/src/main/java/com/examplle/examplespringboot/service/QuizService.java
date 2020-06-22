@@ -45,5 +45,10 @@ public class QuizService {
 		String str="Candidate with mailId: " + emailId + " got updated\n";
 		return ans;
 	}
+	
+	public int addQuetsionService(String qn, String op1, String op2, String op3, String op4, int answer) {
+		int ans=dao.addquestion(qn,op1,op2,op3,op4,answer);
+		return ans;
+	}
 
 }

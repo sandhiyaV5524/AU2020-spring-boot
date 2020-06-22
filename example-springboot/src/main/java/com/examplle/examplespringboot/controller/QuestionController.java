@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.examplle.examplespringboot.Repository.QuestionDao;
 import com.examplle.examplespringboot.model.Candidate;
+import com.examplle.examplespringboot.model.Project;
 import com.examplle.examplespringboot.model.Questions;
 import com.examplle.examplespringboot.model.Quiz;
 import com.examplle.examplespringboot.service.QuizService;
@@ -49,5 +51,16 @@ public class QuestionController {
 	
     }
 	
+
+	@PostMapping(path="/addquestion")
+	public String addproject(@RequestHeader("authemail") String email,@RequestBody Questions qn) {
+		int ans=service.addQuetsionService(qn.qn,qn.op1,qn.op2,qn.op3,qn.op4,qn.answer);
+		if(ans >= 1){
+            return "Quetsion Added Successfully";
+        }else{
+            return "Something went wrong !";
+        }
+		
+	}
 
 }

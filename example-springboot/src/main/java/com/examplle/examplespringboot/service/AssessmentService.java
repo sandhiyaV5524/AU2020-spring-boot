@@ -131,15 +131,36 @@ public class AssessmentService {
 		Chart c=new Chart(result,"Aug 30","July 31");
 		results.add(c);
 
-		 result=dao.getAssignmentCountByLastDate("2020-01-08","2020-31-09").size();
+		 result=dao.getAssignmentCountByLastDate("2020-11-08","2020-31-09").size();
 			c=new Chart(result,"Sep 31","Sep 31");
 			results.add(c);
 			
-			 result=dao.getAssignmentCountByLastDate("2020-01-10","2020-31-11").size();
+			 result=dao.getAssignmentCountByLastDate("2020-19-10","2020-31-11").size();
 				c=new Chart(result,"Nov 31","Nov 31");
 				results.add(c);
-				 result=dao.getAssignmentCountByLastDate("2020-01-12","2020-30-12").size();
+				 result=dao.getAssignmentCountByLastDate("2020-11-12","2020-30-12").size();
 					c=new Chart(result,"Dec 30","Dec 30");
+					results.add(c);
+					
+		return results;
+	}
+
+	public List<Chart> getChartProjectLastDate() {
+		List<Chart> results=new ArrayList<>(); 
+		 
+		int result=dao.getProjectCountByLastDate("2020-17-06","2020-31-07").size();
+		Chart c=new Chart(result,"July 31");
+		results.add(c);
+
+		 result=dao.getProjectCountByLastDate("2020-11-08","2020-31-09").size();
+			c=new Chart(result,"Sep 31");
+			results.add(c);
+			
+			 result=dao.getProjectCountByLastDate("2020-19-10","2020-31-11").size();
+				c=new Chart(result,"Nov 31");
+				results.add(c);
+				 result=dao.getProjectCountByLastDate("2020-11-12","2020-30-12").size();
+					c=new Chart(result,"Dec 30");
 					results.add(c);
 					
 		return results;

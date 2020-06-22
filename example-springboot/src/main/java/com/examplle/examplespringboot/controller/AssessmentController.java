@@ -154,6 +154,11 @@ public class AssessmentController {
 		return service.getChartAssignmentLastDate();
 	}
 	
+	@GetMapping("/chartprojectlastdate")
+	public List<Chart> getChartProjectLastDate(){
+		return service.getChartProjectLastDate();
+	}
+	
 	
 	
 	

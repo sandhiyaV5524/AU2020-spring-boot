@@ -173,6 +173,32 @@ public class AssessmentDao {
 			return null;
 		
 	}
+
+
+
+
+	public List<Project> getProjectCountByLastDate(String string1, String string2) {
+		try {
+			
+			 return jdbcTemplate.query(
+		                "select * from project where last_date BETWEEN ? AND ?",new Object[]{string1,string2},
+		                (rs, rowNum) ->
+		                        new Project(
+		                        		rs.getInt("pid"),
+		                        		rs.getString("title"),
+		    							rs.getString("description"),
+		    							rs.getString("assigned_to"),
+		    							rs.getString("posted_by"),
+		    							rs.getString("last_date")
+		    							            
+		                        )
+		        );
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+	}
 	
 	
 	
