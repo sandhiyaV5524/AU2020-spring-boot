@@ -1,26 +1,32 @@
 package com.examplle.examplespringboot.model;
 
-public class assignment {
-	public int id;
+public class Assignment {
+	public int a_id;
 	public String mailid;
 	public String title;
 	public String description;
+	public String last_date;
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public assignment() {
+	
+	public Assignment() {
 		
 	}
-	public assignment(int id,String title,String mailid, String description) {
+	public Assignment(int a_id,String title,String mailid, String description,String last_date) {
 		super();
-		this.id=id;
+		this.a_id=a_id;
 		this.mailid=mailid;
 		this.title = title;
 		this.description = description;
+		this.last_date=last_date;
+	}
+	
+	
+	
+	public int getA_id() {
+		return a_id;
+	}
+	public void setA_id(int a_id) {
+		this.a_id = a_id;
 	}
 	public String getMailid() {
 		return mailid;
@@ -37,8 +43,15 @@ public class assignment {
 	public String getDescription() {
 		return description;
 	}
+	public String getLast_date() {
+		return last_date;
+	}
+	public void setLast_date(String last_date) {
+		this.last_date = last_date;
+	}
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 
 }
