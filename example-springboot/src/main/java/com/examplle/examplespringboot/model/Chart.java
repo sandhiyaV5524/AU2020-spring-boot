@@ -24,23 +24,23 @@ public class Chart {
 		
 	}
 
-	public Chart(Integer project_count, String project_last_date) {
+	/*public Chart(Integer project_count, String project_last_date) {
 		super();
 		this.project_count = project_count;
 		this.project_last_date = project_last_date;
 		
-	}
+	}*/
 	public Chart(String mark, Integer count) {
 		super();
 		this.mark = mark;
 		this.count = count;
 	}
 	
-	/*public Chart( Integer count1,String mark1) {
+	public Chart( Integer count1,String mark1) {
 		super();
 		this.mark1 = mark1;
 		this.count1 = count1;
-	}*/
+	}
 	
 	
 	

@@ -65,8 +65,8 @@ public class AssignmentController {
     }
 	
 	@DeleteMapping("/deleteassignment/{a_id}")
-    public String deleteAssignment(@PathVariable int a_id){
-        	if(service.deleteAssignmentService(a_id)< 1)
+    public String deleteAssignment(@RequestHeader("authemail") String email,@PathVariable int a_id){
+        	if(service.deleteAssignmentService(email,a_id)< 1)
             	return "Can't be deleted";
             else
             	

@@ -1,5 +1,8 @@
 package com.examplle.examplespringboot.service;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +18,8 @@ import com.examplle.examplespringboot.model.Quiz;
 public class QuizService {
 	@Autowired
     public QuestionDao dao;
+	
+	public String fname="F:\\SANDY\\Accolite\\Project\\Logs.log";
 	
 	
 	public List<Quiz> getQuestions() {
@@ -42,13 +47,30 @@ public class QuizService {
 
 	public int updateScoreService(String emailId, int quiz_mark) {
 		int ans=dao.updatescore(emailId,quiz_mark);
-		String str="Candidate with mailId: " + emailId + " got updated\n";
+		
+		String str="Candidate with mailId: " + emailId + " got updated the quiz mark"+quiz_mark+" \n";
+		logFile(fname,str);
 		return ans;
 	}
 	
-	public int addQuetsionService(String qn, String op1, String op2, String op3, String op4, int answer) {
+	public int addQuetsionService(String email,String qn, String op1, String op2, String op3, String op4, int answer) {
 		int ans=dao.addquestion(qn,op1,op2,op3,op4,answer);
+		String str=qn+" " +op1+" "+op2+" "+op3+" "+op4+" "+answer+" is added to database by "+email+".\n";
+		logFile(fname,str);
 		return ans;
 	}
-
+	private void logFile(String fname, String str) {
+		try {
+			BufferedWriter bw=new BufferedWriter(new FileWriter(fname,true)); 
+			bw.write(str);
+			bw.close();
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 }

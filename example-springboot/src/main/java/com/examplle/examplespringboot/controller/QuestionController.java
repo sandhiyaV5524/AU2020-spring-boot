@@ -54,7 +54,7 @@ public class QuestionController {
 
 	@PostMapping(path="/addquestion")
 	public String addproject(@RequestHeader("authemail") String email,@RequestBody Questions qn) {
-		int ans=service.addQuetsionService(qn.qn,qn.op1,qn.op2,qn.op3,qn.op4,qn.answer);
+		int ans=service.addQuetsionService(email,qn.qn,qn.op1,qn.op2,qn.op3,qn.op4,qn.answer);
 		if(ans >= 1){
             return "Quetsion Added Successfully";
         }else{

@@ -66,8 +66,8 @@ public class ProjectController {
 	
 	
 	@DeleteMapping("/deleteproject/{pid}")
-    public String deleteProject(@PathVariable int pid){
-        	if(service.deleteProjectService(pid)< 1)
+    public String deleteProject(@RequestHeader("authemail") String email,@PathVariable int pid){
+        	if(service.deleteProjectService(email,pid)< 1)
             	return "Can't be deleted";
             else
             	

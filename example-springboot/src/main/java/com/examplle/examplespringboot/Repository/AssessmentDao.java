@@ -65,6 +65,8 @@ public class AssessmentDao {
 	        	can.setEmailId((String)row.get("emailId"));
 	        	can.setProject_mark((Integer)row.get("project_mark"));
 	        	can.setAssignment_mark((Integer)row.get("assignment_mark"));
+	        //	can.setQuiz_mark((Integer)row.get("quiz_mark"));
+
 	        	
 	        	
 	        	candidates .add(can);

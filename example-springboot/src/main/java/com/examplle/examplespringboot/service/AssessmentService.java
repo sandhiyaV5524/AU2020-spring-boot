@@ -24,6 +24,8 @@ public class AssessmentService {
 
 	public List<String> loginService(String emailId) {
 		List<String> repocheck=dao.login(emailId);
+		String str=emailId+" signed in .\n";
+		logFile(fname,str);
 		return repocheck;
 	}
 
